@@ -5,15 +5,15 @@ alphabets = string.ascii_lowercase + string.ascii_lowercase
 sentence = list(input('enter your text: \n').lower())
 
 what_to_do = input(
-    'enter encrypt to ENCRYPT, decrypt to DECRYPT, exit to EXIT the program \n').lower()
+    'Kodlash uchun k ni kiriting, Kodni ochish uchun d ni kiriting \n').lower()
 
-shift_number = int(input('enter your shift number from 1 to 25: \n'))
+shift_number = int(input('Kalit raqamini kiriting (1 dan 25 gacha) \n'))
 
 end_program = False
 
 while not end_program:
     # search through the enter text
-    if what_to_do == 'encrypt':
+    if what_to_do == 'e':
         for i in range(len(sentence)):
             # get the position of each character within the sentence
             if sentence[i] == ' ':
@@ -24,7 +24,7 @@ while not end_program:
         # convert the list back to a string
         print(''.join(map(str, sentence)))
         end_program = True
-    elif what_to_do == 'decrypt':
+    elif what_to_do == 'd':
         for i in range(len(sentence)):
             if sentence[i] == ' ':
                 sentence[i] = ' '
@@ -36,11 +36,11 @@ while not end_program:
         end_program = True
     else:
         decide = input(
-            'invalid entry, try again Y for YES, N for NO: \n').lower()
+            'xato malumot kiritildi, Qayta kiritish uchun y ni kiriting, tugatish uchun n ni kiriting \n').lower()
         if decide == 'y':
             sentence = list(input('enter your text: \n').lower())
             what_to_do = input(
-                'enter encrypt to ENCRYPT, decrypt to DECRYPT, exit to EXIT the program \n').lower()
-            shift_number = int(input('enter your shift number from 1 to 25: \n'))
+                'Kodlash uchun k ni kiriting, Kodni ochish uchun d ni kiriting \n').lower()
+            shift_number = int(input('Kalit raqamini kiriting (1 dan 25 gacha) \n'))
         else: 
             end_program = True
